@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link rel="stylesheet" href="http://elif.team/ahyeon/snakely/bb3dde41d97f19be8ab7b4780a915d5e.css" defer="">
+        <script src="./js/jQuery-3.6.0.js"></script>
+        <style>
+            /* bigshot one font */
+            @import url(https://fonts.googleapis.com/css?family=Cabin+Condensed);
+
+            body, html {
+                background-image: url("doge.jpg");
+
+            /* Full height */
+                height: 100%;
+                width: 100%;
+                overflow: hidden;
+
+                /* Center and scale the image nicely */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            @keyframes animation {
+
+                0% { background: #f1f1f1; }
+                100% {}
+                
+            }
+
+
+        </style>
+    </head>
+    <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+
+        <div class="logo" style="text-align: center; display: none;">
+            <img src="./logo.png" alt="과자 팔아 화성 과자">
+        </div>
+
+        <div class="buttons" style="text-align: center; display: none;">
+            <img src="./assets/start.png" alt="게임시작" onclick="alert('준비중!')">
+            <br>
+            <img src="./assets/setting.png" alt="설정" onclick="alert('준비중!')">
+        </div>
+        
+        <script>
+            $(window).on("load", (function() {
+                $(".logo").delay(1000).fadeIn();
+                $(".buttons").delay(1800).fadeIn();
+            }));
+        </script>
+    </body>
+</html>

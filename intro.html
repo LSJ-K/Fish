@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <script src="./js/jQuery-3.6.0.js"></script>
+        <style>
+            /* bigshot one font */
+            @import url(https://fonts.googleapis.com/css?family=Cabin+Condensed);
+
+            body ,html {
+                margin:0;
+                padding:0;
+                height:100%;
+            }
+
+            body {
+                background: #000000;
+                background-size:cover;
+                font-family: 'Cabin Condensed', sans-serif;
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+                align-items:center;
+                animation: colorChange 3s linear 1;
+            }
+
+            .intro {
+                display: none; 
+                color: white; 
+                font-size: 20px;
+            }
+
+            @keyframes colorChange {
+                0% { background: #f1f1f1; }
+                100% { background: black; }
+            }
+
+            @keyframes colorChange2 {
+                0% { background: black; }
+                100% { background: #f1f1f1; }
+            }
+
+        </style>
+    </head>
+    <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+
+        <div class="load-finish" style="display: none;">
+            <div class="intro" id="msg_1">대화 #1</div>
+            <div class="intro" id="msg_2">대화 #2</div>
+            <div class="intro" id="msg_3">대화 #4</div>
+            <div class="intro" id="msg_4">대화 #5</div>
+        </div>
+
+        <script>
+            $(window).on("load", (function() {
+                $(".load-finish").fadeIn(function() {
+                    $("#msg_1").delay("5000").fadeIn();
+                    $("#msg_1").delay("3500").fadeOut();
+
+                    $("#msg_2").delay("10000").fadeIn();
+                    $("#msg_2").delay("3500").fadeOut();
+
+                    $("#msg_3").delay("15000").fadeIn();
+                    $("#msg_3").delay("3500").fadeOut();
+
+                    $("#msg_4").delay("20000").fadeIn();
+                    $("#msg_4").delay("3500").fadeOut(function() {
+                        $("body").css("animation", "colorChange2 3s linear 1")
+                        $("body").css("background", "#f1f1f1")
+                        setInterval(function(){ window.location.replace("./main.html"); }, 3000);
+                    }); 
+                });
+            }));
+        </script>
+    </body>
+</html>
