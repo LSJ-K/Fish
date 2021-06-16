@@ -41,7 +41,7 @@
         </div>
 
         <div class="buttons" style="text-align: center; display: none;">
-            <img src="./assets/start.png" alt="게임시작" onclick="alert('준비중!')">
+            <img src="./assets/start.png" alt="게임시작" onclick="window.location.replace('./intro.html')">
             <br>
             <img src="./assets/setting.png" alt="설정" onclick="alert('준비중!')">
         </div>
@@ -51,6 +51,20 @@
                 $(".logo").delay(1000).fadeIn();
                 $(".buttons").delay(1800).fadeIn();
             }));
+
+            function openChild()
+            {
+                // window.name = "부모창 이름"; 
+                window.name = "parentForm";
+                // window.open("open할 window", "자식창 이름", "팝업창 옵션");
+                openWin = window.open("http://login.elif.team/signUp",
+                        "childForm", "width=450, height=680, resizable = no, scrollbars = no");    
+            }
+            
+            function setChildText(){
+                openWin.document.getElementById("cInput").value = document.getElementById("pInput").value;
+            }
+
         </script>
     </body>
 </html>
